@@ -4,6 +4,9 @@ import { AppError } from "../utils/appError.js";
 
 export interface AuthenticatedRequest extends Request {
   user?: { userId: string; role: string };
+  body: any;
+  params: any;
+  query: any;
 }
 
 export function requireAuth(req: AuthenticatedRequest, res: Response, next: NextFunction) {
